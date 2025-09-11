@@ -47,5 +47,5 @@ func main() {
 	http.HandleFunc("/users", usersHandler)
 
 	//starts the 8080 server
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":5431", nil)
 }
