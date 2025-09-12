@@ -2,11 +2,9 @@ package main
 
 import (
 	"database/sql"
-	// "encoding/json"
 	"fmt"
-	// "net/http"
 
-	_ "github.com/lib/pq"
+	_ "github.com/jackc/pgx/v5/stdlib"
 )
 
 const (
@@ -58,7 +56,7 @@ const (
 func main() {
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 
-	db, err := sql.Open("postgres", psqlInfo)
+	db, err := sql.Open("pgx", psqlInfo)
 	if err != nil {
 		panic(err)
 	}
